@@ -1,5 +1,11 @@
 @echo off
-set /p use_default="是否使用默认提交信息？(y/n): "
+chcp 65001
+set repo_path=C:\Users\86188\AppData\Roaming\DarkSoulsIII
+cd /d "%repo_path%" || (
+    echo 无法找到指定路径。
+    exit /b
+)
+set /p use_default="欢迎来到黑魂云存档自动提交脚本，是否使用默认提交信息？(y/n): "
 if "%use_default%"=="y" (
     set commit_message=Auto commit: %date% %time%
 ) else (
